@@ -332,7 +332,7 @@ Este proyecto ofrece varios servicios RESTful para gestionar usuarios, empleados
 ### Eliminar solicitudes
 
 **URL:** `/api/request/{IdRequest}`  
-**Método HTTP:** `GET`
+**Método HTTP:** `DELETE`
 **Authorization header:** `Bearer token`  
 **Descripción:** elimina una solicitud de la aplicación.
 
