@@ -9,7 +9,7 @@ npm-debug.log*
 /bower_components
 
 # Environment variables
-.env
+# .env
 
 # Build output
 /dist
