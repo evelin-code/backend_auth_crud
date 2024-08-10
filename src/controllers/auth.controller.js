@@ -4,8 +4,25 @@ import RoleModel from '../models/RoleModel';
 import config from './../config/config';
 import { RESPONSE_MESSAGES }  from './../config/constants/auth.constants'
 
+const isValidEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
 export const signUp = async (req, res) => {
   const { username, email, password } = req.body;
+
+  if (!isValidEmail(email)) {
+    return res.status(400).json({ message: RESPONSE_MESSAGES.INVALID_EMAIL_FORMAT });
+  }
+
+  if (!password || password.trim().length === 0) {
+    return res.status(400).json({ message: RESPONSE_MESSAGES.PASSWORD_REQUIRED });
+  }
+
+  if (!username || username.trim().length === 0) {
+    return res.status(400).json({ message: RESPONSE_MESSAGES.USERNAME_REQUIRED });
+  }
 
   try {
     const userExists = await UserModel.findOne({
@@ -16,6 +33,16 @@ export const signUp = async (req, res) => {
 
     if (userExists) {
       return res.status(400).json({ message: RESPONSE_MESSAGES.USER_EXISTS });
+    }
+
+    const usernameExists = await UserModel.findOne({
+      where: {
+        username: username
+      }
+    });
+
+    if (usernameExists) {
+      return res.status(400).json({ message: RESPONSE_MESSAGES.USERNAME_EXISTS });
     }
 
     const encryptedPassword = await UserModel.prototype.encryptPassword(password);

@@ -1,11 +1,11 @@
 export const RESPONSE_MESSAGES = {
-  NO_REQUESTS_FOUND: 'No requests found',
-  REQUESTS_FOUND: 'Requests found successfully',
-  ERROR_FETCHING_REQUESTS: 'Error fetching requests',
-  EMPLOYEE_NOT_FOUND: 'Employee not found',
-  REQUEST_CREATED_SUCCESSFULLY: 'Request created successfully',
-  ERROR_CREATING_REQUEST: 'Error creating request',
-  REQUEST_NOT_FOUND: 'Request not found',
-  REQUEST_DELETED_SUCCESSFULLY: 'Request deleted successfully',
-  ERROR_DELETING_REQUEST: 'Error deleting request'
+  NO_REQUESTS_FOUND: 'No se encontraron solicitudes',
+  REQUESTS_FOUND: 'Solicitudes encontradas exitosamente',
+  ERROR_FETCHING_REQUESTS: 'Error al recuperar las solicitudes',
+  EMPLOYEE_NOT_FOUND: 'Empleado no encontrado',
+  REQUEST_CREATED_SUCCESSFULLY: 'Solicitud creada exitosamente',
+  ERROR_CREATING_REQUEST: 'Error al crear la solicitud',
+  REQUEST_NOT_FOUND: 'Solicitud no encontrada',
+  REQUEST_DELETED_SUCCESSFULLY: 'Solicitud eliminada exitosamente',
+  ERROR_DELETING_REQUEST: 'Error al eliminar la solicitud'
 };
