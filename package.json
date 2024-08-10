@@ -7,7 +7,7 @@
     "test": "jest",
     "build": "babel src --out-dir dist",
     "dev": "nodemon src/index.js --exec babel-node",
-    "start": "node build/index.js"
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
