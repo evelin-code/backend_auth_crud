@@ -122,3 +122,236 @@ Este proyecto ofrece varios servicios RESTful para gestionar usuarios, empleados
   {
     "message": "La contraseña es requerida."
   }
+
+
+### Obtener usuarios
+
+**URL:** `/api/users`  
+**Método HTTP:** `GET`  
+**Authorization header:** `Bearer token`  
+**Descripción:** obtiene todos los usuarios de la aplicación.
+
+**Respuestas:**
+
+- **200 code http**
+  ```json
+  {
+    "message": "Usuarios recuperados exitosamente",
+    "users": [
+      {
+        "id": 1,
+        "username": "username01",
+        "email": "username01@username01.com",
+        "password": "username01",
+        "rol_id": 2
+      }
+    ]
+  }
+
+- **401 code http**
+  ```json
+  {
+    "message": "Token inválido o expirado"
+  }
+
+- **403 code http**
+  ```json
+  {
+    "message": "No tienes permiso para acceder a este recurso"
+  }
+
+  
+### Obtener empleados
+
+**URL:** `/api/employees`  
+**Método HTTP:** `GET`
+**Authorization header:** `Bearer token`  
+**Descripción:** obtiene todos los empleados de la aplicación.
+
+**Respuestas:**
+
+- **200 code http**
+  ```json
+  {
+    "message": "Empleados recuperados exitosamente",
+    "employees": [
+      {
+        "id": 1,
+        "date_entry": "2024-08-05",
+        "name": "Evelin Gongora",
+        "salary": 4000000,
+        "user_id": 1
+      }
+    ]
+  }
+
+- **401 code http**
+  ```json
+  {
+    "message": "Token inválido o expirado"
+  }
+
+- **404 code http**
+  ```json
+  {
+    "message": "No se encontraron empleados"
+  }
+
+
+### Crear un empleado
+
+**URL:** `/api/employees`  
+**Método HTTP:** `POST`
+**Authorization header:** `Bearer token`  
+**Descripción:** Crea un empleado en la aplicación.
+
+**Body:**
+- **Requerido**
+  ```json
+  {
+    "date_entry": "2024-08-10", 
+    "name": "Evelin",
+    "salary": 4000000,
+    "user_id": 2
+  }
+
+**Respuestas:**
+
+- **201 code http**
+  ```json
+  {
+    "message": "Empleado creado exitosamente",
+    "employee": {
+      "id": 2,
+      "date_entry": "2024-08-10",
+      "name": "Evelin 2",
+      "salary": 4500000,
+      "user_id": 1
+    }
+  }
+
+- **404 code http**
+  ```json
+  {
+    "message": "Token inválido o expirado"
+  }
+
+- **404 code http**
+  ```json
+  {
+    "message": "Usuario no encontrado"
+  }
+
+
+
+
+
+    
+### Obtener solicitudes
+
+**URL:** `/api/request`  
+**Método HTTP:** `GET`
+**Authorization header:** `Bearer token`  
+**Descripción:** obtiene todas las solicitudes de la aplicación.
+
+**Respuestas:**
+
+- **200 code http**
+  ```json
+  {
+    "message": "Solicitudes encontradas exitosamente",
+    "requests": [
+      {
+        "id": 1,
+        "code": "EKC_0001",
+        "description": "Desc",
+        "summary": "Summary",
+        "employee_id": 1,
+        "employee": {
+          "id": 1,
+          "date_entry": "2024-08-05",
+          "name": "Evelin Gongora",
+          "salary": 4000000,
+          "user_id": 1
+        }
+      }
+    ]
+  }
+
+- **401 code http**
+  ```json
+  {
+    "message": "Token inválido o expirado"
+  }
+
+- **404 code http**
+  ```json
+  {
+    "message": "No se encontraron solicitudes"
+  }
+
+
+### Crear un empleado
+
+**URL:** `/api/request`  
+**Método HTTP:** `POST`
+**Authorization header:** `Bearer token`  
+**Descripción:** Crea una solicitud en la aplicación.
+
+**Body:**
+- **Requerido**
+  ```json
+  {
+    "code": "CKE_03",
+    "description": "Request description here",
+    "summary": "Request summary here",
+    "employee_id": 1
+  }
+
+**Respuestas:**
+
+- **201 code http**
+  ```json
+  {
+    "message": "Solicitud creada exitosamente",
+    "request": {
+      "id": 2,
+      "code": "CKE_03",
+      "description": "Request description here",
+      "summary": "Request summary here",
+      "employee_id": 1
+    }
+  }
+
+- **404 code http**
+  ```json
+  {
+    "message": "Token inválido o expirado"
+  }
+
+### Eliminar solicitudes
+
+**URL:** `/api/request/{IdRequest}`  
+**Método HTTP:** `GET`
+**Authorization header:** `Bearer token`  
+**Descripción:** elimina una solicitud de la aplicación.
+
+**Respuestas:**
+
+- **200 code http**
+  ```json
+  {
+    "message": "Solicitud eliminada exitosamente"
+  }
+
+- **401 code http**
+  ```json
+  {
+    "message": "Token inválido o expirado"
+  }
+
+- **404 code http**
+  ```json
+  {
+    "message": "Solicitud no encontrada"
+  }
