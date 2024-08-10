@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import UserModel from '../models/UserModel';
 import RoleModel from '../models/RoleModel';
 import config from './../config/config';
-import { RESPONSE_MESSAGES }  from './../config/auth.constants'
+import { RESPONSE_MESSAGES }  from './../config/constants/auth.constants'
 
 export const signUp = async (req, res) => {
   const { username, email, password } = req.body;

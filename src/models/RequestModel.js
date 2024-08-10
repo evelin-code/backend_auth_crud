@@ -33,7 +33,7 @@ const RequestModel = sequelize.define('RequestModel', {
   timestamps: false,
 });
 
-EmployeeModel.hasMany(RequestModel, { foreignKey: 'employee_id' });
-RequestModel.belongsTo(EmployeeModel, { foreignKey: 'employee_id' });
+EmployeeModel.hasMany(RequestModel, { foreignKey: 'employee_id', as: 'requests' });
+RequestModel.belongsTo(EmployeeModel, { foreignKey: 'employee_id', as: 'employee' });
 
 export default RequestModel;

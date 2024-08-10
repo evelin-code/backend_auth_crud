@@ -1,6 +1,6 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database';
-import UserModel from './UserModel'
+import UserModel from './UserModel';
 
 const EmployeeModel = sequelize.define('EmployeeModel', {
   id: {
