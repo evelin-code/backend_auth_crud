@@ -68,6 +68,14 @@ export const signUp = async (req, res) => {
 export const signIn = async (req, res) => {
   const { email, password } = req.body;
 
+  if (!isValidEmail(email)) {
+    return res.status(400).json({ message: RESPONSE_MESSAGES.INVALID_EMAIL_FORMAT });
+  }
+
+  if (!password || password.trim().length === 0) {
+    return res.status(400).json({ message: RESPONSE_MESSAGES.PASSWORD_REQUIRED });
+  }
+  
   try {
     const userFound = await UserModel.findOne({
       where: { email: email },

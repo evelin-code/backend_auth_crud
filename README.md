@@ -70,3 +70,55 @@ Este proyecto ofrece varios servicios RESTful para gestionar usuarios, empleados
     "message": "El nombre de usuario ya está en uso."
   }
 
+
+### Iniciar sesión
+
+**URL:** `/api/auth/signin`  
+**Método HTTP:** `POST`  
+**Descripción:** Inicia sesión en la aplicación.
+
+**Body:**
+- **Requerido**
+  ```json
+  {
+    "email": "username01@username01.com",
+    "password": "username01"
+  }
+
+**Respuestas:**
+
+- **200 code http**
+  ```json
+  {
+    "message": "Usuario autenticado exitosamente.",
+    "token": "token",
+    "user": {
+      "id": 1,
+      "username": "",
+      "email": "",
+      "password": "",
+      "rol_id": 1,
+      "role": {
+        "id": 1,
+        "name": "Empleado"
+      }
+    }
+  }
+
+- **400 code http**
+  ```json
+  {
+    "message": "Usuario no encontrado."
+  }
+
+- **400 code http**
+  ```json
+  {
+    "message": "El formato del correo electrónico no es válido."
+  }
+
+- **400 code http**
+  ```json
+  {
+    "message": "La contraseña es requerida."
+  }
