@@ -58,7 +58,11 @@ export const signUp = async (req, res) => {
       expiresIn: '1h'
     });
 
-    res.status(201).json({ message: RESPONSE_MESSAGES.USER_CREATED_SUCCESSFULLY, token });
+    res.status(201).json({ 
+      message: RESPONSE_MESSAGES.USER_CREATED_SUCCESSFULLY, 
+      token,
+      rol_id: newUser.rol_id
+    });
 
   } catch (error) {
     res.status(500).json({ message: RESPONSE_MESSAGES.ERROR_CREATING_USER, error: error.message });

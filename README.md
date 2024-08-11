@@ -43,7 +43,8 @@ Este proyecto ofrece varios servicios RESTful para gestionar usuarios, empleados
   ```json
   {
     "message": "Usuario creado exitosamente.",
-    "token": "token"
+    "token": "token",
+    "rol_id": 1
   }
 
 - **400 code http**
