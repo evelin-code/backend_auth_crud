@@ -4,7 +4,7 @@ import { verifyToken, isAdmin, isEmployee } from "../middlewares/auth.jwt";
 
 const router = Router();
 
-router.get('/', [verifyToken, isAdmin], requestCtrl.getAllRequests);
+router.get('/', [verifyToken], requestCtrl.getAllRequests);
 
 router.post('/', [verifyToken, isAdmin], requestCtrl.createRequest);
 
