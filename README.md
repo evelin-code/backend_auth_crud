@@ -7,9 +7,8 @@ Este proyecto es una aplicación de autenticación y CRUD (Crear, Leer, Actualiz
 
 1. [Herramientas Utilizadas](#Herramientas-Utilizadas)
 2. [Uso de la API](#Uso-de-la-API)
-3. [Pruebas](#Pruebas)
-4. [Despliegue](#Despliegue)
-5. [Recursos Adicionales](#Recursos-Adicionales)
+3. [Despliegue](#Despliegue)
+4. [Recursos Adicionales](#Recursos-Adicionales)
 
 ## Herramientas Utilizadas
 
@@ -242,11 +241,6 @@ Este proyecto ofrece varios servicios RESTful para gestionar usuarios, empleados
   {
     "message": "Usuario no encontrado"
   }
-
-
-
-
-
     
 ### Obtener solicitudes
 
@@ -292,7 +286,7 @@ Este proyecto ofrece varios servicios RESTful para gestionar usuarios, empleados
   }
 
 
-### Crear un empleado
+### Crear una solicitud
 
 **URL:** `/api/request`  
 **Método HTTP:** `POST`
@@ -356,3 +350,20 @@ Este proyecto ofrece varios servicios RESTful para gestionar usuarios, empleados
   {
     "message": "Solicitud no encontrada"
   }
+
+## Despliegue
+
+El proyecto ha sido desplegado utilizando [Render](https://render.com/).
+
+### URL Pública
+
+- **Backend:** [https://backend-auth-crud.onrender.com/](https://backend-auth-crud.onrender.com/)
+
+
+## Recursos Adicionales
+
+- **Colección Postman**: [Visitar](https://drive.google.com/file/d/1bxSjxcMimzjw06pcB6SB0Z-nLN7shC8s/view?usp=sharing)
+
+- **Script de la base de datos**: [Visitar](https://drive.google.com/file/d/1ptljCX6vZ22szgMQAKJywN7fTcGPwozi/view?usp=sharing)
+
+- **Esquema de la base de datos**: [Visitar](https://drive.google.com/file/d/15cuI28-8yluvZrILBvwHkeJSep9-C5vy/view?usp=sharing)
